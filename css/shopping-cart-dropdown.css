@@ -1,0 +1,11 @@
+ul.shopping-cart-dropdown {
+  max-width: 600px;
+  padding: 20px;
+}
+ul.shopping-cart-dropdown li.collection-header,
+ul.shopping-cart-dropdown li.collection-footer {
+  background-color: transparent;
+}
+ul.shopping-cart-dropdown li.collection-footer button {
+  width: 100%;
+}

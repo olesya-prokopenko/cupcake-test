@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cupcake</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/vue-infinite-scroll/vue-infinite-scroll.js"></script>
+  <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="node_modules/materialize-css/dist/js/materialize.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js"></script>
+
+</head>
+<body>
+<div class="catalog" id="app" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+  <header>
+    <nav class="teal lighten-1">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Sale</a></li>
+          <li><a href="#">Blog</a></li>
+          <li>
+            <a class="dropdown-button shopping-cart" href='#' data-activates='dropdown2'>
+              <i class="material-icons">shopping_cart</i>
+              <span class="shopping-cart__count red lighten-1 white-text">{{ total }}</span>
+            </a>
+            <ul  id="dropdown2" class="dropdown-content shopping-cart-dropdown">
+              <li  v-if="cartItems.length > 0" class="collection-header"><h4>Ваша корзина</h4></li>
+              <li  v-else class="collection-header"><h4>Ваша корзина пуста</h4></li>
+              <li v-for="(item, index) in cartItems"
+                  :key="item.id">
+                <div class="card horizontal">
+                  <div class="card-image">
+                    <img :src="item.url">
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <p>{{ item.title }}</p>
+                    </div>
+                    <div class="card-action">
+                      <span>Количество: {{ cartCounts[index] }}</span>
+                      <button class="waves-effect waves-teal btn-flat" @click="deleteItem(index)">Удалить</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li v-if="cartItems.length > 0" class="collection-footer">
+                <button class="btn">Оформить заказ</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#">Sale</a></li>
+          <li><a href="#">Blog</a></li>
+          <li class="side-cart">
+            <h5 v-if="cartItems.length > 0" class="grey-text text-darken-4">Ваша корзина</h5>
+            <h5 v-else >Ваша корзина пуста</h5>
+            <ul>
+              <li v-for="(item, index) in cartItems"
+                  :key="item.id">
+                <div class="card horizontal grey-text text-darken-4">
+                  <div class="card-image">
+                    <img :src="item.url">
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <p>{{ item.title }}</p>
+                    </div>
+                    <div class="card-action">
+                      <span>Количество: {{ cartCounts[index] }}</span>
+                      <button class="waves-effect waves-teal btn-flat" @click="deleteItem(index)">Удалить</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <button v-if="cartItems.length > 0" class="btn">Оформить заказ</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="main-area">
+    <div class="main-area__container">
+      <div class="cards-list">
+        <my-card
+            @increment="incrementTotal"
+            v-for="(item, index) in data"
+            :index="index"
+            :key="item.id"
+            :title="item.title"
+            :url="item.url"
+            class="cards-list__item">
+        </my-card>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</div>
+</body>
+</html>

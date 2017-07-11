@@ -1,0 +1,34 @@
+.cards-list .card .card-image .card-title {
+  height: 100px;
+  overflow: hidden;
+}
+.cards-list .card .card-action .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+.cards-list .card .card-reveal .card-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.shopping-cart-dropdown .card.horizontal .card-image {
+  width: 100%;
+  max-width: 150px;
+}
+.shopping-cart-dropdown .card.horizontal .card-stacked {
+  max-width: calc(100% - 150px);
+}
+.shopping-cart-dropdown .card.horizontal .card-content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.side-cart .card.horizontal .card-image {
+  display: none;
+}

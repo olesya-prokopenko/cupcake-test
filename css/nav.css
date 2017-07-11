@@ -1,0 +1,14 @@
+nav .nav-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 960px) {
+  nav .nav-wrapper {
+    padding: 0 15px;
+  }
+}

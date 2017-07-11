@@ -1,0 +1,147 @@
+.cards-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.cards-list__item {
+  margin-right: 10px;
+  width: calc((100% - 3*10px)/4);
+}
+.cards-list__item:last-child,
+.cards-list__item:nth-child(4n) {
+  margin-right: 0;
+}
+@media (max-width: 1000px) {
+  .cards-list__item {
+    width: calc((100% - 2*10px)/3);
+  }
+  .cards-list__item:nth-child(n) {
+    margin-right: 10px;
+  }
+  .cards-list__item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .cards-list__item {
+    width: calc((100% - 10px)/2);
+  }
+  .cards-list__item:nth-child(n) {
+    margin-right: 10px;
+  }
+  .cards-list__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 495px) {
+  .cards-list__item {
+    width: 100%;
+  }
+  .cards-list__item:nth-child(n) {
+    margin-right: 0;
+  }
+}
+.main-area {
+  margin-top: 40px;
+}
+.main-area__container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 960px) {
+  .main-area__container {
+    padding: 0 15px;
+  }
+}
+.cards-list .card .card-image .card-title {
+  height: 100px;
+  overflow: hidden;
+}
+.cards-list .card .card-action .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+.cards-list .card .card-reveal .card-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.shopping-cart-dropdown .card.horizontal .card-image {
+  width: 100%;
+  max-width: 150px;
+}
+.shopping-cart-dropdown .card.horizontal .card-stacked {
+  max-width: calc(100% - 150px);
+}
+.shopping-cart-dropdown .card.horizontal .card-content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.side-cart .card.horizontal .card-image {
+  display: none;
+}
+nav .nav-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 960px) {
+  nav .nav-wrapper {
+    padding: 0 15px;
+  }
+}
+.shopping-cart {
+  position: relative;
+}
+.shopping-cart__count {
+  position: absolute;
+  top: 8px;
+  left: 45%;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  max-width: 50px;
+  height: 18px;
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 5px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+ul.shopping-cart-dropdown {
+  max-width: 600px;
+  padding: 20px;
+}
+ul.shopping-cart-dropdown li.collection-header,
+ul.shopping-cart-dropdown li.collection-footer {
+  background-color: transparent;
+}
+ul.shopping-cart-dropdown li.collection-footer button {
+  width: 100%;
+}
+.side-cart {
+  padding: 0 32px;
+}

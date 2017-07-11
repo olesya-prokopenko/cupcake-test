@@ -1,0 +1,13 @@
+@import "_vars";
+
+.layout() {
+  max-width: @desktop-width;
+  width: 100%;
+  padding: 0 @desktop-padding;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (max-width: @landscape-width) {
+    padding: 0 @mobile-padding;
+  }
+}

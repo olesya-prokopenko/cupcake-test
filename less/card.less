@@ -1,0 +1,58 @@
+@import "_mixins";
+
+.card {
+
+  // @context cards-list
+  .cards-list & {
+    .card-image {
+      .card-title {
+        height: 100px;
+        overflow: hidden;
+      }
+    }
+
+    .card-action {
+      .btn {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    .card-reveal {
+      .card-title {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  // @context shopping-cart-dropdown
+  .shopping-cart-dropdown & {
+    &.horizontal {
+      .card-image {
+        width: 100%;
+        max-width: 150px;
+      }
+
+      .card-stacked {
+        max-width: calc(100% - 150px);
+      }
+
+      .card-content {
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  // @context side-cart
+  .side-cart & {
+    &.horizontal {
+      .card-image {
+        display: none;
+      }
+    }
+  }
+}
